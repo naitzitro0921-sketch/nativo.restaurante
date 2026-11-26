@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nativo · Cocina natural de autor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Poppins:wght@400;500&family=Sacramento&display=swap" rel="stylesheet">
+<style>
+:root{--g:#232c1a;--g2:#2f3a24;--lime:#d5dfa9;--sage:#8f9a6d;--paper:#d5dfa9;--ink:#232c1a;--mute:#4d5a38;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#2b3522;--ink:#e3ebc0;--mute:#b5c088;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#2b3522;--ink:#e3ebc0;--mute:#b5c088;color-scheme:dark}
+html{height:100%;background:var(--g);scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;min-height:100%;font:400 16px/1.7 Poppins,system-ui,sans-serif;background:var(--g);color:var(--lime)}
+a{color:inherit}
+.wrap{width:min(1080px,100% - 40px);margin-inline:auto}
+.script{font-family:Sacramento,"Brush Script MT",cursive;font-weight:400;line-height:1}
+.serif{font-family:Marcellus,Georgia,serif;font-weight:400}
+/* hero */
+.hero{position:relative;overflow:hidden;min-height:92vh;display:flex;flex-direction:column}
+.hero svg.bg{position:absolute;inset:auto 0 0 0;width:100%;height:70%;stroke:var(--g2);fill:none;stroke-width:5;pointer-events:none}
+nav{position:relative;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px clamp(20px,5vw,64px);font-size:.95rem}
+nav .script{font-size:2rem}
+nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0}
+nav a{text-decoration:none;padding:6px 0;border-bottom:1px solid transparent}
+nav a:hover,nav a:focus-visible{border-color:var(--lime);outline:none}
+.hero .c{position:relative;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px 20px 72px}
+.sprig{width:48px;height:72px;stroke:var(--lime);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.hero h1{font-size:clamp(6rem,24vw,12rem);margin:0}
+.hero .sub{font-size:clamp(1rem,2.6vw,1.35rem);letter-spacing:.16em;margin:8px 0 6px}
+.hero .loc{color:var(--sage);margin:0 0 32px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.btn{display:inline-block;padding:12px 26px;border:1px solid var(--lime);border-radius:999px;text-decoration:none;font-weight:500}
+.btn.fill{background:var(--lime);color:var(--g)}
+.btn:focus-visible,button:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+/* sections */
+section{padding:88px 0}
+.dark2{background:var(--g2)}
+.phil{display:grid;grid-template-columns:1fr 1.25fr;gap:56px;align-items:start}
+.phil h2{font-size:clamp(3.4rem,8vw,5.5rem);margin:0}
+.phil p{max-width:60ch;margin:0 0 18px}
+.pr3{margin-top:32px;display:grid;gap:18px}
+.pr3 div{border-left:2px solid var(--sage);padding-left:16px}
+.pr3 h3{margin:0;font-size:1.2rem}
+.pr3 p{margin:0;color:var(--sage)}
+/* menu */
+#menu{background:var(--paper);color:var(--ink)}
+#menu h2{font-size:clamp(4rem,12vw,7.5rem);line-height:1;margin:0 0 24px;color:var(--sage);text-align:center}
+.tabs{display:flex;justify-content:center;gap:clamp(12px,3vw,36px);flex-wrap:wrap;margin-bottom:24px}
+.tabs button{background:none;border:0;border-bottom:2px solid transparent;color:var(--ink);font:inherit;font-family:Marcellus,Georgia,serif;font-size:1.5rem;padding:4px 2px;cursor:pointer}
+.tabs button[aria-selected="true"]{border-color:var(--ink)}
+.chips{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:40px}
+.chips button{font:500 .85rem Poppins,system-ui,sans-serif;color:var(--ink);background:none;border:1px solid var(--ink);border-radius:999px;padding:6px 16px;cursor:pointer}
+.chips button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+#menu button:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.list{max-width:760px;margin-inline:auto}
+.it{display:grid;grid-template-columns:1fr auto;gap:8px 28px;padding:22px 0;border-top:1px solid var(--sage)}
+.it h3{margin:0 0 4px;font-size:1.45rem;line-height:1.25}
+.tag{display:inline-block;margin-left:8px;font:500 .78rem Poppins,system-ui,sans-serif;color:var(--mute);border:1px solid var(--sage);border-radius:999px;padding:1px 10px;vertical-align:middle}
+.it p{margin:0;font-size:.95rem}
+.it .ct{font-style:italic;color:var(--mute);margin-top:4px}
+.price{text-align:right;font-family:Marcellus,Georgia,serif;font-size:1.35rem;line-height:1.3;white-space:nowrap}
+.price small{display:block;font-size:1.05rem;color:var(--mute)}
+.ic circle.bg{fill:var(--ink)}.ic g{stroke:var(--paper);fill:none;stroke-width:.17;stroke-linecap:round;stroke-linejoin:round}.ic .f{fill:var(--paper);stroke:none}.ic{flex:none}
+.al{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.leg{max-width:760px;margin:0 auto 32px;border:1px solid var(--sage);border-radius:12px;padding:14px 20px}
+.leg summary{font-family:Marcellus,Georgia,serif;font-size:1.3rem;cursor:pointer}
+.leg p{margin:8px 0 14px;font-size:.9rem;color:var(--mute)}
+#leg{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px 16px}
+#leg div{display:flex;align-items:center;gap:10px;font-size:.88rem}
+.empty{text-align:center;color:var(--mute);padding:32px 0}
+.dr{margin:0 0 32px}
+.dr h3{font-size:1.9rem;margin:0 0 8px}
+.dr div{display:flex;justify-content:space-between;gap:16px;padding:8px 0;border-top:1px solid var(--sage);font-family:Marcellus,Georgia,serif;font-size:1.2rem}
+.note{text-align:center;color:var(--mute);font-size:.9rem;margin-top:40px;letter-spacing:.06em}
+/* raíz */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.two h2{font-size:2.2rem;margin:0 0 14px}
+.two p{max-width:56ch;margin:0 0 14px}
+dl{margin:0}dt{font-family:Marcellus,Georgia,serif;font-size:1.2rem;margin-top:16px}dd{margin:0;color:var(--sage)}
+/* visita */
+.visit{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.visit h3{font-size:1.5rem;margin:0 0 8px}
+.visit p{margin:0 0 6px}
+.closing{text-align:center;padding:64px 20px 48px;border-top:1px solid var(--g2)}
+.closing .script{font-size:clamp(2.6rem,7vw,4rem)}
+.closing p{color:var(--sage);margin:16px 0 0;font-size:.92rem}
+@media (max-width:760px){
+ nav ul{gap:14px;font-size:.88rem}nav .script{display:none}
+ .phil,.two,.visit{grid-template-columns:1fr;gap:32px}
+ section{padding:64px 0}
+ .it{grid-template-columns:1fr}.price{text-align:left}.price small{display:inline;margin-left:10px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="hero">
+ <svg class="bg" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><path d="M-20 520C-40 300 80 140 300 110 330 330 190 500 -20 520z"/><path d="M1020 520C1040 330 930 190 760 170 730 360 850 500 1020 520z"/><path d="M-20 330C60 250 150 220 240 240M1020 380C940 320 880 320 800 340"/></svg>
+ <nav>
+  <span class="script">Nativo</span>
+  <ul><li><a href="#filosofia">Filosofía</a></li><li><a href="#menu">Menú</a></li><li><a href="#raiz">Raíz colombiana</a></li><li><a href="#visitanos">Visítanos</a></li></ul>
+ </nav>
+ <div class="c">
+  <svg class="sprig" viewBox="0 0 60 90" aria-hidden="true"><path d="M30 88V14"/><ellipse cx="30" cy="8" rx="4" ry="6"/><path d="M30 34C18 34 12 27 12 18c12 0 18 7 18 16zM30 34c12 0 18-7 18-16-12 0-18 7-18 16zM30 58C18 58 12 51 12 42c12 0 18 7 18 16zM30 58c12 0 18-7 18-16-12 0-18 7-18 16z"/></svg>
+  <h1 class="script">Nativo</h1>
+  <p class="sub">Cocina natural de autor</p>
+  <p class="loc">Flexitariana, con raíz colombiana. Barrio Obrero, Bello.</p>
+  <div class="btns"><a class="btn fill" href="#menu">Ver el menú</a><a class="btn" href="#visitanos">Cómo llegar</a></div>
+ </div>
+</header>
+
+<section id="filosofia">
+ <div class="wrap phil">
+  <h2 class="script">Volver a lo esencial</h2>
+  <div>
+   <p>Cocinar con lo que da la tierra, respetar su tiempo y dejar que cada producto cuente su propia historia.</p>
+   <p>Esta carta nació en nuestra cocina, entre ensayos, errores y pequeños hallazgos. Cada plato une lo que somos con lo que otras cocinas del mundo nos enseñaron, sin soltar nunca la raíz.</p>
+   <p>Nuestra cocina es flexitariana y colombiana: lo vegetal lleva el peso de la carta, cada plato fuerte trae su fuente de proteína y todo se cocina con ingredientes, técnicas y preparaciones de aquí.</p>
+   <div class="pr3">
+    <div><h3 class="serif">Menos procesado</h3><p>Producto fresco, transformado poco.</p></div>
+    <div><h3 class="serif">Nada de desperdicio</h3><p>La cidra, el plátano, las hojas y las cáscaras se aprovechan en puré, salteado o encurtido.</p></div>
+    <div><h3 class="serif">Contraste</h3><p>Lo frío y lo caliente, lo crujiente y lo suave, lo dulce y lo ácido, en el mismo plato.</p></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="menu" aria-labelledby="mt">
+ <div class="wrap">
+  <h2 id="mt" class="serif">Menú</h2>
+  <details class="leg" open><summary>Guía de alérgenos</summary><p>Cada plato muestra los símbolos de lo que contiene. Busca el tuyo aquí y avísale a tu mesero antes de ordenar.</p><div id="leg"></div></details>
+  <div class="tabs" role="tablist" aria-label="Secciones del menú"></div>
+  <div class="chips" id="chips" aria-label="Filtrar por tipo de dieta"></div>
+  <div class="list" id="list" role="tabpanel" aria-live="polite"></div>
+  <p class="note">¿Alguna alergia o restricción alimentaria? Cuéntale a tu mesero antes de ordenar. Las kcal son aproximadas. Precios en pesos colombianos.</p>
+ </div>
+</section>
+
+<section id="raiz" class="dark2">
+ <div class="wrap two">
+  <div>
+   <h2 class="serif">Ingredientes de aquí</h2>
+   <p>Cidra, arveja, plátano maduro, panela, fríjol cargamanto y cabecita negra, queso campesino y costeño, quinua, trucha, agraz, mora, lulo y maracuyá.</p>
+   <p>11 de nuestros 15 platos no llevan carne ni pescado: 6 son veganos, 5 vegetarianos, 3 pescetarianos y 1 flexitariano.</p>
+  </div>
+  <div>
+   <h2 class="serif">Técnicas de aquí</h2>
+   <dl>
+    <dt>Salteado en paila</dt><dd>Reemplaza al wok en Salto de Huerta y Bosque y Trapiche.</dd>
+    <dt>Asado a la brasa</dt><dd>La berenjena de Río y Huerta toma sabor ahumado sin horno especial.</dd>
+    <dt>Horneado con panela</dt><dd>El plátano maduro se carameliza como en un trapiche.</dd>
+    <dt>Olla campesina</dt><dd>Campo Suave rinde homenaje al puré suave de cidra y arveja.</dd>
+   </dl>
+  </div>
+ </div>
+</section>
+
+<section id="visitanos">
+ <div class="wrap visit">
+  <div><h3 class="serif">Dónde estamos</h3><p>Barrio Obrero<br>Bello, Antioquia</p><p>Pedidos solo en el local.</p></div>
+  <div><h3 class="serif">Horario</h3><p>Martes a sábado: 12:00 m. a 9:00 p. m.<br>Domingo: 12:00 m. a 5:00 p. m.<br>Lunes: cerrado</p></div>
+  <div><h3 class="serif">Contacto</h3><p>WhatsApp: +57 314 785 7479<br>Instagram: <a href="https://instagram.com/naitvo.colma">@naitvo.colma</a></p><p><a class="btn fill" href="https://wa.me/573147857479?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20Nativo">Escríbenos</a></p></div>
+ </div>
+</section>
+
+<footer class="closing">
+ <p class="script" style="color:var(--lime);margin:0">Bienvenido a lo nuestro.<br>Bienvenido a Nativo.</p>
+ <p>Una carta de Sebastián Ortiz.</p>
+</footer>
+
+<script>
+const T=[
+["Torre Tropical","Ovolactovegetariano","ve","Aguacate, pepino y huevo en cubos con crema suave de queso, coco y limón; entre capa y capa, tomates cherry cocinados en aceite de coco. Vinagreta de miel, limón y perejil.","huevo, leche, coco",24000,560,"Entradas"],
+["Cidra al Sol","Vegano","v","Puré de cidra servido frío, con piña sellada en su propia azúcar, cebolla morada encurtida en zumo de piña con limón y semillas de girasol tostadas.","semillas de girasol",18000,100,"Entradas"],
+["Cuadro Verde","Apivegetariano","ve","Aguacate, tofu y melón en cubos con hierbas frescas y limón, semillas de girasol y un aderezo de agraz y manzana verde caramelizada.","soya, ajo, ají",26000,520,"Entradas"],
+["Pastel de Cordillera","Pescetariano","p","Dos triángulos de masa de maíz rellenos de trucha, espinaca y queso campesino, horneados con queso hasta quedar dorados. Salsa dulce de vino blanco y panela.","pescado, leche, sulfitos",28000,330,"Entradas"],
+["Campo Suave","Vegano","v","Puré cremoso de cidra y arveja con fajitas de tomate fresco, cilantro y ajonjolí. Un plato de olla campesina, suave y fresco.","sésamo",22000,70,"Entradas"],
+["Salto de Huerta","Vegano","v","Col china salteada en paila con pimentón rojo, brócoli y champiñones, aromatizada con ajo y jengibre. Aceite de oliva con cilantro fresco.","ajo, pimentón, hongos",22000,305,"Entradas"],
+["Dulce Raíz","Apivegetariano","ve","Puré de camote servido frío, con cubos de tofu dorados en salsa agridulce de vinagre de caña y miel, repollo morado y zanahoria baby.","soya, sulfitos",30000,165,"Fuertes"],
+["Bosque y Trapiche","Vegano","v","Salteado en paila de zucchini, espárragos, pimentón y orellanas sobre puré de fríjol cargamanto, con medallones de plátano maduro horneados con panela.","ajo, pimentón, hongos",39000,440,"Fuertes"],
+["Río y Huerta","Pescetariano","p","Filete de trucha empanizado y sellado sobre puré de berenjena asada a la brasa con queso campesino, trazado con salsa verde de espinaca, perejil y panela.","pescado, gluten, leche",49000,840,"Fuertes"],
+["Atún Nativo","Pescetariano","p","Cubos de atún sellados con media costra de mostaza y marañón, sobre quinua cremosa en leche de coco y flor de Jamaica, con crocante de ocañera, carambolo y melón.","pescado, frutos secos (marañón), mostaza, coco",49000,540,"Fuertes"],
+["El Integral","Flexitariano","f","Pan integral tostado relleno de carne de cerdo y lentejas sellada en el sartén, con queso costeño y aderezo de manzana verde, miel, panela y canela.","gluten, leche",32000,485,"Fuertes"],
+["Barca de la Huerta","Vegano","v","Zucchini verde y amarillo relleno de fríjol cabecita negra, champiñones y puerro, sobre una cama de acelgas salteadas con jengibre.","ajo, pimentón, hongos",30000,200,"Fuertes"],
+["Crep de la Finca","Ovovegetariano","ve","Dos creps de avena, banano y huevo rellenos de fríjol blanquillo cocinado en jugo de naranja y mango; fresas, manzana verde y semillas de chía.","huevo, gluten (avena)",30000,580,"Fuertes"],
+["Brevas y Queso","Lactovegetariano","ve","Brevas cocidas lentamente en miel de panela y canela, servidas tibias con queso costeño y marañón tostado.","leche, frutos secos (marañón)",16000,290,"Postres"],
+["Mora y Coco","Vegano","v","Crema suave de coco con compota de mora de Castilla y crocante de coco tostado y panela. Sin ningún ingrediente de origen animal.","coco",15000,260,"Postres"]];
+const B={"Sodas":[["Maracuyá",12000],["Lulo",12000],["Sandía y limón",12000],["Hierbabuena",12000]],"Jugos":[["Maracuyá",10000],["Piña",8000],["Sandía",8000],["Limonada",8000],["Mora",10000],["Fresa",10000]],"Bar":[["Cerveza nacional",7000],["Vino (copa)",20000],["Sangría (jarra)",60000]]};
+const IC={huevo:'<ellipse rx=".6" ry=".85"/>',leche:'<path d="M0 -1C.95 .1 .8 1 0 1C-.8 1 -.95 .1 0 -1z"/>',coco:'<circle r=".9"/><circle class="f" cx="-.3" cy="-.25" r=".13"/><circle class="f" cx=".3" cy="-.25" r=".13"/><circle class="f" cx="0" cy=".25" r=".13"/>',girasol:'<circle class="f" r=".3"/><path d="M.5 0H.95M-.5 0H-.95M0 .5V.95M0 -.5V-.95M.35 .35L.67 .67M-.35 .35L-.67 .67M.35 -.35L.67 -.67M-.35 -.35L-.67 -.67"/>',soya:'<path d="M-.9 -.7L.9 .7"/><circle cx="-.45" cy="-.1" r=".28"/><circle cx="0" cy="-.25" r=".28"/><circle cx=".45" cy=".1" r=".28"/>',ajo:'<path d="M0 -.95C.2 -.5 .9 -.3 .8 .3C.7 .9 -.7 .9 -.8 .3C-.9 -.3 -.2 -.5 0 -.95zM0 -.5V.7"/>',aji:'<path d="M-.7 -.6C.95 -.75 .95 .3 .5 .95C.6 .1 0 -.1 -.7 -.6zM-.7 -.6L-.95 -.95"/>',pescado:'<ellipse cx="-.32" rx=".62" ry=".4"/><path d="M.3 0L.95 -.5V.5z"/><circle class="f" cx="-.6" cy="-.08" r=".07"/>',sulfitos:'<path d="M-.6 -.95H.6C.6 -.1 .3 .2 0 .25C-.3 .2 -.6 -.1 -.6 -.95zM0 .25V.85M-.4 .9H.4"/>',sesamo:'<ellipse rx=".2" ry=".4" transform="translate(-.5 -.4) rotate(-30)"/><ellipse rx=".2" ry=".4" transform="translate(.5 -.35) rotate(25)"/><ellipse rx=".2" ry=".4" transform="translate(0 .5) rotate(-8)"/>',pimenton:'<path d="M0 -.6C.4 -.9 .85 -.5 .8 .1C.75 .8 .3 .95 0 .7C-.3 .95 -.75 .8 -.8 .1C-.85 -.5 -.4 -.9 0 -.6zM0 -.6L.12 -1"/>',hongos:'<path d="M-.95 0C-.95 -1 .95 -1 .95 0z"/><rect x="-.3" y="0" width=".6" height=".9"/>',gluten:'<path d="M0 .95V-.7"/><ellipse cy="-.8" rx=".14" ry=".2"/>'+[-.45,0,.45].map(y=>[35,-35].map(r=>`<ellipse cy="-.3" rx=".17" ry=".3" transform="translate(0 ${y}) rotate(${r})"/>`).join("")).join(""),maranon:'<path d="M.7 -.7C-.9 -.9 -1 .7 .2 .85C-.5 .4 -.4 -.3 .7 -.7z"/><circle class="f" cx=".8" cy="-.78" r=".08"/>',mostaza:'<rect x="-.45" y="-.25" width=".9" height="1.2"/><rect x="-.2" y="-.6" width=".4" height=".35"/><rect class="f" x="-.28" y="-.9" width=".56" height=".3"/>'};
+const AL=[["huevo","Huevo",/huevo/],["leche","Leche",/leche/],["coco","Coco",/coco/],["girasol","Semillas de girasol",/girasol/],["soya","Soya",/soya/],["ajo","Ajo",/\bajo\b/],["aji","Ají",/ají/],["pescado","Pescado",/pescado/],["sulfitos","Sulfitos",/sulfitos/],["sesamo","Sésamo",/sésamo/],["pimenton","Pimentón",/pimentón/],["hongos","Hongos",/hongos/],["gluten","Gluten (incluye avena)",/gluten/],["maranon","Frutos secos (marañón)",/marañón/],["mostaza","Mostaza",/mostaza/]];
+const svg=(a,s)=>`<svg class="ic" viewBox="-1.3 -1.3 2.6 2.6" width="${s}" height="${s}" role="img"><title>${a[1]}</title><circle class="bg" r="1.3"/><g transform="scale(.72)">${IC[a[0]]}</g></svg>`;
+const icons=t=>AL.filter(a=>a[2].test(t)).map(a=>svg(a,30)).join("");
+const F=[["all","Todos"],["v","Vegano"],["ve","Vegetariano"],["p","Pescetariano"],["f","Flexitariano"]];
+const S=["Entradas","Fuertes","Postres","Bebidas"];
+let sec="Entradas",fil="all";
+const $=s=>document.querySelector(s),money=n=>"$"+n.toLocaleString("es-CO");
+function render(){
+ $(".tabs").innerHTML=S.map(s=>`<button role="tab" aria-selected="${s===sec}" data-s="${s}">${s}</button>`).join("");
+ $("#chips").hidden=sec==="Bebidas";
+ $("#chips").innerHTML=F.map(([k,l])=>`<button aria-pressed="${k===fil}" data-f="${k}">${l}</button>`).join("");
+ let h="";
+ if(sec==="Bebidas"){
+  h=Object.entries(B).map(([g,a])=>`<div class="dr"><h3>${g}</h3>${a.map(([n,p])=>`<div><span>${n}</span><span>${money(p)}</span></div>`).join("")}</div>`).join("");
+ }else{
+  const a=T.filter(d=>d[7]===sec&&(fil==="all"||d[2]===fil));
+  h=a.length?a.map(d=>`<article class="it"><div><h3 class="serif">${d[0]}<span class="tag">${d[1]}</span></h3><p>${d[3]}</p><div class="al" role="group" aria-label="Contiene: ${d[4]}">${icons(d[4])}</div></div><div class="price">${money(d[5])}<small>${d[6]} kcal</small></div></article>`).join(""):`<p class="empty">No hay platos con este filtro en esta sección. Prueba con otra.</p>`;
+ }
+ $("#list").innerHTML=h;
+}
+document.addEventListener("click",e=>{
+ const b=e.target.closest("button");if(!b)return;
+ if(b.dataset.s){sec=b.dataset.s;render();$(`[data-s="${sec}"]`).focus()}
+ if(b.dataset.f){fil=b.dataset.f;render();$(`[data-f="${fil}"]`).focus()}
+});
+$("#leg").innerHTML=AL.map(a=>`<div>${svg(a,32)}<span>${a[1]}</span></div>`).join("");
+render();
+</script>
+</body>
+</html>
